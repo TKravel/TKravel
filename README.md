@@ -6,6 +6,7 @@ const greeting = (person, icon) => {
 ```
 
 greeting(TKravel, wave);
+
 *// expected output*
 
 
