@@ -1,10 +1,10 @@
 # Introduction
 ```javascript
-const greeting = (person, emoji) => {
-  return `<h1>Hi, I’m ${person.username} <span>${emoji}</span></h1>`
+const setGreeting = (person, emoji) => {
+  introduction.innerText = `Hi, I’m ${person.username} ${emoji}`
 }
 
-introduction.innerHTML = greeting(TKravel, '&#128075');
+setGreeting(TKravel, '&#128075');
 ```
 *// expected output*
 
