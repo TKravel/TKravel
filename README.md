@@ -29,10 +29,10 @@ return (
       {aboutData !== null &&
         <>
           <ul className='interests-list'>
-          {aboutData.map((aboutItem) => {
+          {aboutData.interests.map((item, idx) => {
               return (
-                <li key={aboutItem.id}>
-                <span>{aboutItem.icon}</span> {aboutItem}
+                <li key={item.id}>
+                <span>{aboutData.icons[idx]}</span> {item}
                 </li>
               )
             })
