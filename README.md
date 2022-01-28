@@ -3,17 +3,13 @@
 const greeting = (person, icon) => {
   return `<h1>Hi, I’m ${person} <span>${icon}</span></h1>`
 }
-```
 
 greeting(TKravel, wave);
-
+```
 *// expected output*
 
 
 # Hi, I'm TKravel 👋
-
-I'm a Full Stack Developer looking for a team to create amazing work with!
-
 
 
 ```javascript
