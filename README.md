@@ -16,7 +16,7 @@ setGreeting(TKravel, '&#128075');
 import React, {useEffect, useState} from 'react';
 
 export const AboutSection = () => {
-const [aboutData, setAboutData] = useState({});
+const [aboutData, setAboutData] = useState(null);
   useEffect(() => {
       fetch('http://me.com/get-details')
         .then((response) => response.json())
@@ -26,18 +26,22 @@ const [aboutData, setAboutData] = useState({});
 return (
   <section>
       <h2>About me</h2>
-      <ul className='interests-list'>
-         {aboutData.map((aboutItem) => {
-            return (
-              <li key={aboutItem.id}>
-              <span>{aboutItem.icon}</span> {aboutItem}
-              </li>
-            )
-          })
+      {aboutData !== null &&
+        <>
+          <ul className='interests-list'>
+          {aboutData.map((aboutItem) => {
+              return (
+                <li key={aboutItem.id}>
+                <span>{aboutItem.icon}</span> {aboutItem}
+                </li>
+              )
+            })
           }
-      </ul>
-      <h3>Bio</h3>
-      <p className='about-bio>{aboutData.bio)</p>
+          </ul>
+          <h3>Bio</h3>
+          <p className='about-bio>{aboutData.bio)</p>
+        </>
+      }
   </section>
 )};
 ```
