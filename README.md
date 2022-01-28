@@ -1,17 +1,17 @@
-
+# Introduction
 ```javascript
-const greeting = (person, icon) => {
-  return `<h1>Hi, I’m ${person} <span>${icon}</span></h1>`
+const greeting = (person, emoji) => {
+  return `<h1>Hi, I’m ${person.username} <span>${emoji}</span></h1>`
 }
 
-greeting(TKravel.username, wave);
+introduction.innerHTML = greeting(TKravel, '&#128075');
 ```
 *// expected output*
 
 
-# Hi, I'm TKravel 👋
+<h1>Hi, I'm TKravel 👋</h1>
 
-
+## About section
 ```javascript
 import React, {useEffect, useState} from 'react';
 
@@ -44,7 +44,7 @@ return (
 *// expected output*
 
 
-## About me
+<h2>About me</h2>
 
 - :family: Father to the coolest little 2yo
 - :books: Life long learner
@@ -53,7 +53,7 @@ return (
 - :art: Artist
 - :ghost: Horror and Sci-fi movie fan
 
-### Bio
+<h3>Bio</h3>
 
 I spent a decade creating G-code programs to machine aerospace parts out of raw metals. My curious nature led me to higher level languages. My love of learning and creative nature left me creating silly games and programs in my free time. My passion pushed me to dive deeper and continue learning more. Nowadays I enjoy creating Full Stack apps using the MERN stack, but I am always up to learning new languages and tools! Some areas I'd love to explore is block chain development, android development, Java, and Python.
 
