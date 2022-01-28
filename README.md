@@ -4,7 +4,7 @@ const greeting = (person, icon) => {
   return `<h1>Hi, I’m ${person} <span>${icon}</span></h1>`
 }
 
-greeting(TKravel, wave);
+greeting(TKravel.username, wave);
 ```
 *// expected output*
 
