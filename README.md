@@ -1,7 +1,7 @@
 # Introduction
 ```javascript
 const setGreeting = (person, emoji) => {
-		introduction.innerText = `Hi, I'm ${person} ${emoji}`;
+	introduction.innerText = `Hi, I'm ${person} ${emoji}`;
 };
 
 setGreeting('TKravel', '👋');
@@ -29,9 +29,9 @@ export const AboutSection = () => {
 
 	return (
 		<section>
-			<h2>About me</h2>
 			{aboutData !== null && (
 				<>
+					<h2>About me</h2>
 					<ul className='interests-list'>
 						{aboutData.interests.map((item, idx) => {
 							return (
