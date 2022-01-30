@@ -1,7 +1,7 @@
 # Introduction
 ```javascript
 const setGreeting = (person, emoji) => {
-	introduction.innerText = `Hi, I'm ${person} ${emoji}`;
+  introduction.innerText = `Hi, I'm ${person} ${emoji}`;
 };
 
 setGreeting('TKravel', '👋');
@@ -16,37 +16,37 @@ setGreeting('TKravel', '👋');
 import React, { useEffect, useState } from 'react';
 
 export const AboutSection = () => {
-	const [aboutData, setAboutData] = useState(null);
+  const [aboutData, setAboutData] = useState(null);
 
-	useEffect(() => {
-		fetch(`${process.env.REACT_APP_MY_INFO}/get-details`)
-			.then((response) => response.json())
-			.then((data) => setAboutData(data))
-			.catch((err) => {
-				console.log(`Oops ${err.message}`);
-			});
-	}, []);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_MY_INFO}/get-details`)
+      .then((response) => response.json())
+      .then((data) => setAboutData(data))
+      .catch((err) => {
+        console.log(`Oops ${err.message}`);
+      });
+    }, []);
 
-	return (
-		<section>
-			{aboutData !== null && (
-				<>
-					<h2>About me</h2>
-					<ul className='interests-list'>
-						{aboutData.interests.map((item, idx) => {
-							return (
-								<li key={item.id}>
-									{aboutData.icons[idx]} {item}
-								</li>
-							);
-						})}
-					</ul>
-					<h3>Bio</h3>
-					<p className='about-bio'>{aboutData.bio}</p>
-				</>
-			)}
-		</section>
-	);
+  return (
+    <section>
+      {aboutData !== null && (
+        <>
+          <h2>About me</h2>
+          <ul className='interests-list'>
+            {aboutData.interests.map((item, idx) => {
+              return (
+                <li key={item.id}>
+                  {aboutData.icons[idx]} {item}
+                </li>
+              );
+            })}
+          </ul>
+          <h3>Bio</h3>
+          <p className='about-bio'>{aboutData.bio}</p>
+        </>
+      )}
+    </section>
+  );
 };
 ```
 *// expected output*
