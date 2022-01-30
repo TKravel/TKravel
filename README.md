@@ -1,10 +1,10 @@
 # Introduction
 ```javascript
 const setGreeting = (person, emoji) => {
-  introduction.innerText = `Hi, I’m ${person.username} ${emoji}`
-}
+		introduction.innerText = `Hi, I'm ${person} ${emoji}`;
+};
 
-setGreeting(TKravel, '&#128075');
+setGreeting('TKravel', '👋');
 ```
 *// expected output*
 
@@ -13,37 +13,41 @@ setGreeting(TKravel, '&#128075');
 
 ## About section
 ```javascript
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const AboutSection = () => {
-const [aboutData, setAboutData] = useState(null);
-  useEffect(() => {
-      fetch('http://me.com/get-details')
-        .then((response) => response.json())
-        .then((data) => setAboutData(data))
-  }, []);
+	const [aboutData, setAboutData] = useState(null);
 
-return (
-  <section>
-      <h2>About me</h2>
-      {aboutData !== null &&
-        <>
-          <ul className='interests-list'>
-          {aboutData.interests.map((item, idx) => {
-              return (
-                <li key={item.id}>
-                <span>{aboutData.icons[idx]}</span> {item}
-                </li>
-              )
-            })
-          }
-          </ul>
-          <h3>Bio</h3>
-          <p className='about-bio>{aboutData.bio)</p>
-        </>
-      }
-  </section>
-)};
+	useEffect(() => {
+		fetch(`${process.env.REACT_APP_MY_INFO}/get-details`)
+			.then((response) => response.json())
+			.then((data) => setAboutData(data))
+			.catch((err) => {
+				console.log(`Oops ${err.message}`);
+			});
+	}, []);
+
+	return (
+		<section>
+			<h2>About me</h2>
+			{aboutData !== null && (
+				<>
+					<ul className='interests-list'>
+						{aboutData.interests.map((item, idx) => {
+							return (
+								<li key={item.id}>
+									{aboutData.icons[idx]} {item}
+								</li>
+							);
+						})}
+					</ul>
+					<h3>Bio</h3>
+					<p className='about-bio'>{aboutData.bio}</p>
+				</>
+			)}
+		</section>
+	);
+};
 ```
 *// expected output*
 
