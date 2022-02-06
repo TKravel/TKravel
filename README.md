@@ -63,7 +63,7 @@ export const AboutSection = () => {
 
 <h3>Bio</h3>
 
-I spent a decade creating G-code programs to machine aerospace parts out of raw metals. My curious nature led me to higher level languages. My love of learning and creative nature left me creating silly games and programs in my free time. My passion pushed me to dive deeper and continue learning more. Nowadays I enjoy creating Full Stack apps using the MERN stack, but I am always up to learning new languages and tools! Some areas I'd love to explore is block chain development, android development, Java, and Python.
+I spent a decade creating G-code programs to machine aerospace parts out of raw metals. My curious nature led me to higher level languages. My love of learning and creative nature left me creating silly games and programs in my free time. My passion pushed me to dive deeper and continue learning more. Nowadays I enjoy creating Full Stack apps using the MERN stack, but I am always up to learning new languages and tools! Some areas I'd love to explore is block chain development, android development, and Java. Currently I am doing 100 days of Python code as I work towards increasing my skill set.
 
 
 <!---
